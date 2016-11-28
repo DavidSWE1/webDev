@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<HTML lang="en-US">
+<HEAD>
+    <TITLE>Order Your Favourite Pizza Now!</TITLE>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <meta name="description" content="Configure and order your favourite pizza now!">
+
+
+</HEAD>
+<BODY>
+<MAIN>
+    <!--heading-->
+    <H1>Order Your Favourite Pizza Now!</H1>
+    <!--form-->
+
+    <Form action ="http://atlantis.cit.ie/displayvalues.php" method="post" >
+
+        <ARTICLE>
+
+            <!--mug image-->
+            <p>
+                <img id="img" src="images/pizza.png" alt="Red mug" height="240" width="400">
+            </p>
+
+
+        </ARTICLE>
+
+        <ARTICLE>
+            <!--colour selection radio buttons-->
+            <h3>Choose from one of our popular pizzas:</h3>
+            <input type="radio" name ="pizzaType" value = "Pepperoni" class="pizzaType" checked="checked">Pepperoni<br>
+            <input type="radio" name ="pizzaType" value = "Vegetarian" class="pizzaType" >Vegetarian<br>
+            <input type="radio" name ="pizzaType" value = "Meat feast" class="pizzaType" >Meat feast<br>
+            <input type="radio" name ="pizzaType" value = "Hawaiian" class="pizzaType">Hawaiian<br>
+            <input type="radio" name ="pizzaType" value = "Margherita" class="pizzaType" required>Margherita<br>
+            <br>
+        </ARTICLE>
+        <ARTICLE>
+            <!--size selection radio buttons-->
+            <h3>Choose your pizza size:</h3>
+            <input type="radio" name ="size" value = "Small" id="small" checked="checked">Personal 7" &euro;7.99<br>
+            <input type="radio" name ="size" value = "Medium" id="medium">Medium 9" &euro;9.99<br>
+            <input type="radio" name ="size" value = "Large" id="large">Large 12" &euro;11.99<br>
+            <input type="radio" name ="size" value = "Extra-large" id="extra">Extra Large 16" &euro;13.99<br>
+            <br>
+        </ARTICLE>
+        <ARTICLE>
+            <!--upgrades selection checkboxes-->
+            <h3>Choose your toppings &euro;1.50 each:</h3>
+            <input type="checkbox" name ="Ham" value = "Yes" id ="ham">Ham<br>
+            <input type="checkbox" name ="Pepperoni" value = "Yes" id ="pepperoni">Pepperoni<br>
+            <input type="checkbox" name ="Chicken" value = "Yes" id ="chicken">Chicken<br>
+            <input type="checkbox" name ="Mushrooms" value = "Yes" id ="mushrooms">Mushrooms<br>
+        </ARTICLE>
+        <ASIDE>
+            <!--Add-on selection checkboxes-->
+            <h3>Tasty extras only 50cent:</h3>
+            <input type="checkbox" name ="Oregano" value = "Yes" id ="oregano">Oregano<br>
+            <input type="checkbox" name ="Garlic" value = "Yes" id ="garlic">Garlic<br>
+            <input type="checkbox" name ="Chilli flakes" value = "Yes" id ="chilliFlakes">Chilli flakes<br>
+        </ASIDE>
+        <ASIDE>
+            <!--Supplier option selection checkboxes-->
+            <h3>Choose your base:</h3>
+            <input type="radio" name ="base" value = "Regular" id ="regular " checked="checked">Regular base<br>
+            <input type="radio" name ="base" value = "Deep" id ="deep">Deep dish<br>
+            <input type="radio" name ="base" value = "Thin" id ="thin">Thin and crispy<br>
+        </ASIDE>
+
+        <ASIDE>
+
+            <!--Purchase button, Total calculation button and total display section-->
+
+            <br>
+            Total:<input type="text" name="Total" id = "total" required data-readonly >
+
+            <br>
+
+            Promo code: <input type="text" name="Promo" id = "promo">
+            <br>
+            <br>
+            <br>
+            <input type="submit" value="Order Now" >
+
+            <button id="calcBtn" type="button" >Calculate Total</button>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+        </ASIDE>
+    </Form>
+
+    <!--Call to Javascript file-->
+    <script src="calculate.js"></script>
+
+</MAIN>
+
+</BODY>
+</HTML>

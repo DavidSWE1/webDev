@@ -1,0 +1,46 @@
+html{
+    background-color : darkgray;
+}
+
+/*This workaround to enable the total field to be read was taken from an online example at https://codepen.io/fxm90/pen/zGogwV */
+input[data-readonly] {
+    pointer-events: none;
+}
+/*end*/
+
+
+main, form
+{
+    display : flex;
+    flex-flow : row wrap;
+    background-color : darkgray;
+}
+
+/*.pizzaType{
+    background-color : lightseagreen;
+}*/
+
+article{
+
+    padding:15px;
+}
+
+aside{
+
+    padding:15px;
+}
+
+h1 {
+
+    padding-left: 30%;
+    color: blue;;
+}
+
+h3{
+
+    color: green;
+}
+
+
+
+
