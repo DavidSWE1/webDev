@@ -4,10 +4,6 @@
 
 
 
-//Add an event listener to the calculate button so that when it is clicked it calls the calculateTotal() method
-document.getElementById("calcBtn").addEventListener("click", calculateTotal, false);
-
-
 /*
 
 
@@ -30,7 +26,30 @@ var list2 =  document.getElementsByTagName("input");
 for (i = 0; i < list2.length; i++) {
     list2[i].addEventListener("click", calculateTotal, false);
 }
+/*
+document.getElementById("calcBtn").removeEventListener("click", calculateTotal, false);
+document.getElementById("calcBtn").addEventListener("click", applyDiscount, false);
 
+function applyDiscount(){
+
+    calculateTotal();
+
+    var discountPrice;
+
+    var promoValue = document.getElementById("promo");
+    if(promoValue.value.toLowerCase() == "cyber"){
+        discountPrice=document.getElementById("promo").value * .85;
+        alert("Cyber Monday 15% discount applied!")
+    }
+
+
+
+    //Round the price to 2 decimal places
+    discountPrice = Math.round(discountPrice*100)/100;
+
+    // Update the total to the total section in the html page
+    document.getElementById("total").value = discountPrice;
+}*/
 
 
 function calculateTotal(){
@@ -51,9 +70,6 @@ function calculateTotal(){
     }
     else if (document.getElementById("extra").checked) {
         totalPrice=totalPrice+ 13.99;
-    }
-    else{
-        alert("Please choose your pizza size to see the total cost");
     }
 
 
@@ -101,10 +117,11 @@ function calculateTotal(){
     //alert("totalPrice " + totalPrice);
 
     var promoValue = document.getElementById("promo");
-    if(promoValue.value == "cyber"){
-        totalPrice=totalPrice*.85;
+    if(promoValue.value.toLowerCase() == "cyber"){
+        totalPrice=totalPrice * .85;
         alert("Cyber Monday 15% discount applied!")
     }
+
 
     //Round the price to 2 decimal places
     totalPrice = Math.round(totalPrice*100)/100;
@@ -117,18 +134,19 @@ function calculateTotal(){
 
 
 
-//Get all the elements of the class colour and place them an a node list
-var els = document.getElementsByClassName("colour")
+//Get all the elements of the class pizzaType and place them an a node list
+var els = document.getElementsByClassName("pizzaType");
 
 //Loop through the node list and add an event listener for each element
 for(var i =0; i<els.length; i++){
-    els[i].addEventListener("click", updateMugColour, false);
+    els[i].addEventListener("click", updatePizza, false);
 }
 
-function updateMugColour(){
+function updatePizza(){
 
-    //Get all the elements of the class colour and place them an a node list
-    var el = document.getElementsByClassName("colour");
+
+    //Get all the elements of the class pizzaType and place them an a node list
+    var el = document.getElementsByClassName("pizzaType");
 
 
     for(var i =0; i<el.length; i++){
@@ -136,8 +154,8 @@ function updateMugColour(){
         //loop through the node list, if the radio button in question is checked then update the image
 
         if(el[i].checked) {
-            //update the image source by constructing a string to match the image name for the required colour using the .value method
-            document.getElementById("img").src = "images/" + el[i].value + ".jpg";
+            //update the image source by constructing a string to match the image name for the required pizzaType using the .value method
+            document.getElementById("img").src = "images/" + el[i].value + ".png";
         }
     }
 }
